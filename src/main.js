@@ -3,6 +3,7 @@ import "./style.css";
 
 let data = {
   "": {
+    "": "English",
     label: {
       "": {
         name: "Customer Name",
@@ -42,6 +43,7 @@ let data = {
     },
   },
   th: {
+    "": "ภาษาไทย",
     label: {
       "": {
         name: "ชื่อลูกค้า",

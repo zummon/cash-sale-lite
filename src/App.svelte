@@ -8,7 +8,6 @@
 	const amt = num => {
 	  const str = Number(num).toLocaleString(undefined, {
 	    minimumFractionDigits: 2,
-	    maximumFractionDigits: 2
 	  });
 	  return num ? `${q.cur} ${str}` : "";
 	};
@@ -60,18 +59,18 @@
 </script>
 
 <div class="flex flex-wrap justify-center items-center my-4 print:hidden">
-{#each Object.keys(data) as lng, i (`lang-${i}`)}
+	{#each Object.keys(data) as lng, i (`lang-${i}`)}
 		<button class="text-xl font-bold rounded-3xl py-2 px-4 {q.lang === lng ? "cursor-default text-gray-100" : "bg-gray-100 cursor-pointer"}" on:click={() => {
 			q.lang = lng
-			}}>
-				{lng =='th' ? 'ไทย' : 'Eng'}
+		}}>
+			{data[lng]['']}
 		</button>
 	{/each}
 	{#each Object.keys(data[q.lang].label) as dc, i (`doc-${i}`)}
 		<button class="text-xl font-bold rounded-3xl py-2 px-4 {q.doc === dc ? "cursor-default text-gray-100" : "bg-gray-100 cursor-pointer"}" on:click={() => {
 			q.doc = dc
-			}}>
-					{data[q.lang].label[dc].title}
+		}}>
+			{data[q.lang].label[dc].title}
 		</button>
 	{/each}
 </div>
